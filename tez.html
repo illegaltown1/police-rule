@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>قوانين التيزر</title>
+  <style>
+    body {
+      background-color: #2f2f2f;
+      color: #ffd700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 40px 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #ffeb3b;
+    }
+    p {
+      font-size: 22px;
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    ul {
+      list-style-type: none;
+      background: #424242;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 30px 40px;
+      font-size: 22px;
+      line-height: 1.8;
+    }
+    ul li::before {
+      content: "• ";
+      color: #ffd700;
+    }
+    .nav-button {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 30px;
+      font-size: 20px;
+      background-color: #ffd700;
+      color: #2f2f2f;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .nav-button:hover {
+      background-color: #e6c200;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>قوانين التيزر</h1>
+
+  <p><strong>تعريف التيزر:</strong> التيزر هو سلاح يقوم بكهربة الشخص وتثبيته بمكانه لتسهيل التعامل معه</p>
+
+  <ul>
+    <li>يحق لك تيزرة الشخص في حال عدم انصياع الشخص لاوامر الشرطة</li>
+    <li>يحق لك تيزرة الشخص في حال كان بيده سلاح أبيض مثل: سكين</li>
+    <li>يحق لك تيزرة الشخص في حال توجه لركوب مركبة أثناء استيقافه</li>
+    <li>في حال طلقت التيزر ولم تصب الشخص، يحق لك إعادة التيزرة مرة أخرى</li>
+    <li>إذا أصبت الشخص بالتيزر يمكنك تيزرته مرة أخرى بعد 10 ثواني</li>
+  </ul>
+
+  <button class="nav-button" onclick="location.href='next_page.html'">التالي</button>
+
+</body>
+</html>
