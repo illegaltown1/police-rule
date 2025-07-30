@@ -52,24 +52,22 @@
       font-weight: bold;
       animation: fadeIn 2.2s ease-in;
     }
-    .btn-next {
+    .nav-button {
       display: block;
-      width: 180px;
-      margin: 40px auto 20px;
-      padding: 12px 0;
-      background-color: #ffd700;
-      color: #2f2f2f;
-      font-weight: bold;
+      margin: 40px auto 0 auto;
+      padding: 12px 30px;
       font-size: 20px;
-      text-align: center;
+      font-weight: bold;
+      color: #2f2f2f;
+      background-color: #ffd700;
+      border: none;
       border-radius: 10px;
-      text-decoration: none;
+      cursor: pointer;
       box-shadow: 0 4px 10px rgba(255, 215, 0, 0.7);
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.3s ease;
     }
-    .btn-next:hover {
+    .nav-button:hover {
       background-color: #ffeb3b;
-      color: #1a1a1a;
     }
   </style>
 </head>
@@ -96,7 +94,7 @@
     <li>اصدار مخالفة ان وجدت او تحذير شفوي</li>
   </ul>
 
-  <a href="pursuit_rules.html" class="go.html">التالي: قوانين المطاردات</a>
+  <button class="nav-button" onclick="location.href='go.html'">التالي</button>
 
 </body>
 </html>
