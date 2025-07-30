@@ -31,7 +31,7 @@
       border-radius: 12px;
       box-shadow: 0 6px 12px rgba(0,0,0,0.4);
       max-width: 900px;
-      margin: 0 auto;
+      margin: 0 auto 30px;
       padding: 30px 40px;
       font-size: 22px;
       line-height: 1.8;
@@ -40,6 +40,22 @@
     ul li::before {
       content: "• ";
       color: #ffd700;
+    }
+    .nav-button {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 28px;
+      font-size: 20px;
+      background-color: #ffeb3b;
+      color: #2f2f2f;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .nav-button:hover {
+      background-color: #e6d200;
     }
   </style>
 </head>
@@ -54,6 +70,8 @@
     <li>بعد كل صدمة تنتظر 5 ثواني لتصدمه مرة اخرى</li>
     <li>ممنوع الصدم بدون تواجد وحدة معك بالمطاردة</li>
   </ul>
+
+  <button class="nav-button" onclick="location.href='shoot.html'">التالي</button>
 
 </body>
 </html>
