@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>الاستيقاف المروري</title>
+  <style>
+    body {
+      background-color: #2f2f2f; /* رمادي غامق */
+      color: #ffd700; /* أصفر */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 40px 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #ffeb3b;
+      animation: fadeIn 2s ease-in;
+    }
+    p, li {
+      font-size: 22px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      animation: fadeIn 2.5s ease-in;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      background: #424242;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 40px;
+    }
+    ul li::before {
+      content: "• ";
+      color: #ffd700;
+    }
+    .section-title {
+      font-size: 26px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #ffeb3b;
+      font-weight: bold;
+      animation: fadeIn 2.2s ease-in;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>الاستيقاف المروري</h1>
+
+  <div class="section-title">قبل التوقيف :</div>
+  <ul>
+    <li>تشغيل أضواء التنبيه وصفارات الانذار ان لزم</li>
+    <li>استخدام الراديو لابلاغ عن توقيف مروري وذكر الموقع ومواصفات المركبة</li>
+  </ul>
+
+  <div class="section-title">اثناء التوقيف :</div>
+  <ul>
+    <li>التوجه بحذر الى جانب السائق</li>
+    <li>التعريف بنفسك الاسم والرتبة</li>
+    <li>اخبار السائق بسبب التوقيف</li>
+    <li>طلب الهوية ورخصة القيادة واستمارة المركبة</li>
+  </ul>
+
+  <div class="section-title">بعد الفحص :</div>
+  <ul>
+    <li>اصدار مخالفة ان وجدت او تحذير شفوي</li>
+  </ul>
+
+</body>
+</html>
