@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>قوانين الرتب العسكرية</title>
+  <style>
+    body {
+      direction: rtl;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #2f2f2f;
+      color: #ffd700;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffeb3b;
+      font-size: 38px;
+      margin-bottom: 40px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    ul {
+      font-size: 22px;
+      line-height: 2;
+      background: #424242;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      animation: fadeIn 1.8s ease-in;
+    }
+
+    .nav-button {
+      display: block;
+      margin: 50px auto 0;
+      padding: 15px 40px;
+      font-size: 20px;
+      background-color: #ffd700;
+      color: #2f2f2f;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .nav-button:hover {
+      background-color: #ffca28;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>قوانين الرتب العسكرية</h1>
+
+    <ul>
+      <li>يجب مناداة الرتب التالية بـ "حضرة": ملازم، ملازم أول، نقيب، رائد، مقدم، عقيد.</li>
+      <li>يجب مناداة رتبي "عميد" و "لواء" بـ "سعادة".</li>
+      <li>يجب مناداة "فريق" و "فريق أول" بـ "معالي الفريق" أو "معالي الفريق الأول".</li>
+      <li>يمنع تقليد أو انتحال أي رتبة بدون ترقية رسمية.</li>
+      <li>احترام تسلسل الأوامر العسكرية وعدم تخطي الرتب العليا.</li>
+      <li>تنفيذ الأوامر العسكرية من الرتب الأعلى بكل التزام.</li>
+    </ul>
+
+    <button class="nav-button" onclick="location.href='penalties.html'">التالي</button>
+  </div>
+
+</body>
+</html>
