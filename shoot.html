@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>قوانين إطلاق النار</title>
+  <style>
+    body {
+      background-color: #2f2f2f;
+      color: #ffd700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 40px 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #ffeb3b;
+      animation: fadeIn 2s ease-in;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      background: #424242;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 40px;
+    }
+    li {
+      font-size: 22px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      animation: fadeIn 2.5s ease-in;
+    }
+    ul li::before {
+      content: "• ";
+      color: #ffd700;
+    }
+    .nav-button {
+      display: block;
+      margin: 40px auto 0;
+      padding: 12px 24px;
+      font-size: 20px;
+      background-color: #ffeb3b;
+      color: #2f2f2f;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .nav-button:hover {
+      background-color: #e6d400;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>قوانين إطلاق النار</h1>
+
+  <ul>
+    <li>قبل اطلاق النار يجب تحذير الشخص بشكل لفظي او باطلاق طلقة تحذيرية</li>
+    <li>في حال مواطن اطلق نار يتم اسقاطه فورا</li>
+    <li>لا يحق طلق النار في حال المواطن رافع يده وباقي في موقعه</li>
+    <li>في حال الشخص تعمد صدك مركبات الشرطة يتم اطلاق النار على الكفرات مع تحمل كافة المسؤولية</li>
+    <li>ممنوع منعا باتا اطلاق النار بمراكز الشرطة بدون سبب او الطلق بشكل عام بدون سبب</li>
+  </ul>
+
+  <button class="nav-button" onclick="location.href='fire.html'">التالي</button>
+
+</body>
+</html>
