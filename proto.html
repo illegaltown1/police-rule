@@ -71,8 +71,18 @@
       transition: background-color 0.3s ease;
     }
 
+    .nav-buttons {
+      max-width: 440px;
+      margin: 45px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+    }
+
     button.nav-button {
-      margin-top: 45px;
+      flex: 1;
+      max-width: 200px;
       padding: 14px 40px;
       font-size: 22px;
       background-color: #f0c419;
@@ -97,8 +107,15 @@
         font-size: 18px;
       }
 
+      .nav-buttons {
+        flex-direction: column;
+        max-width: none;
+        margin: 30px 20px 0;
+      }
+
       button.nav-button {
-        width: 100%;
+        max-width: 100%;
+        margin-bottom: 15px;
         font-size: 20px;
       }
     }
@@ -127,7 +144,10 @@
     <li>code 0-5: العسكري مشغول</li>
   </ul>
 
-  <button class="nav-button" onclick="location.href='up.html'">التالي</button>
+  <div class="nav-buttons">
+    <button class="nav-button" onclick="history.back()">◀️ السابق</button>
+    <button class="nav-button" onclick="location.href='up.html'">التالي ▶️</button>
+  </div>
 
 </body>
 </html>
