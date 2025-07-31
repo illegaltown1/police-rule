@@ -11,56 +11,121 @@
       direction: rtl;
       margin: 0;
       padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
       animation: fadeIn 1.5s ease-in;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     h1 {
       text-align: center;
-      font-size: 36px;
+      font-size: 38px;
       margin-bottom: 30px;
       color: #ffeb3b;
+      text-shadow: 0 0 12px #ffd700cc, 0 0 20px #ffeb3bbb;
       animation: fadeIn 2s ease-in;
     }
+
     ul {
       list-style-type: none;
       padding: 0;
       background: #424242;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
       max-width: 600px;
-      margin: 0 auto 30px auto;
-      padding: 30px 40px;
+      margin: 0 auto 40px auto;
+      padding: 35px 40px;
       font-size: 22px;
-      line-height: 1.8;
+      line-height: 2;
       animation: fadeIn 2.5s ease-in;
     }
+
+    ul li {
+      margin-bottom: 18px;
+      color: #ffd700;
+      text-shadow: 0 0 6px #d4af37cc;
+    }
+
     ul li::before {
       content: "• ";
       color: #ffd700;
+      font-weight: bold;
+      text-shadow: 0 0 8px #ffea0077;
     }
+
     button.nav-button {
       display: block;
       margin: 0 auto;
-      padding: 12px 28px;
+      padding: 14px 36px;
       font-size: 20px;
       background-color: #ffd700;
       color: #2f2f2f;
       border: none;
-      border-radius: 10px;
+      border-radius: 14px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
       font-weight: bold;
-      box-shadow: 0 4px 8px rgba(255, 215, 0, 0.7);
+      box-shadow: 0 6px 16px #e6d300cc;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
+
     button.nav-button:hover {
       background-color: #ffeb3b;
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px #e6c200dd;
+    }
+
+    /* دوائر ضوئية متوهجة */
+    .glow-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .glow-top {
+      width: 280px;
+      height: 280px;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, #ffd700 45%, transparent 80%);
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    .glow-bottom {
+      width: 350px;
+      height: 350px;
+      bottom: 35px;
+      right: 12%;
+      background: radial-gradient(circle, #ffeb3b 40%, transparent 75%);
+      animation: pulseGlow 5s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        opacity: 0.15;
+        transform: translateX(-50%) scale(1);
+      }
+      50% {
+        opacity: 0.3;
+        transform: translateX(-50%) scale(1.1);
+      }
     }
   </style>
 </head>
 <body>
+
+  <div class="glow-circle glow-top"></div>
+  <div class="glow-circle glow-bottom"></div>
 
   <h1>الأكواد العسكرية</h1>
 
