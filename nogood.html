@@ -33,32 +33,32 @@
       color: #ffeb3b;
       text-shadow: 0 0 12px #ffd700cc, 0 0 20px #ffeb3bbb;
       animation: fadeIn 2s ease-in;
+      z-index: 1;
     }
 
-    ul {
-      list-style-type: none;
-      background: #424242;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    .laws-container {
       max-width: 900px;
-      margin: 0 auto 40px;
-      padding: 35px 45px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      z-index: 1;
+    }
+
+    .law-box {
+      background-color: #424242;
+      border-radius: 18px;
+      padding: 25px 35px;
       font-size: 22px;
       line-height: 2;
-      animation: fadeIn 2.5s ease-in;
-    }
-
-    ul li {
-      margin-bottom: 20px;
-      color: #ffd700;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
       text-shadow: 0 0 6px #d4af37cc;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    ul li::before {
-      content: "• ";
-      color: #ffd700;
-      font-weight: bold;
-      text-shadow: 0 0 8px #ffea0077;
+    .law-box:hover {
+      background-color: #4f4f4f;
+      transform: scale(1.03);
     }
 
     .nav-buttons {
@@ -68,6 +68,8 @@
       margin-bottom: 40px;
       z-index: 1;
       animation: fadeIn 3s ease-in;
+      max-width: 900px;
+      width: 100%;
     }
 
     .nav-button {
@@ -172,14 +174,14 @@
 
   <h1>التعامل مع الأشخاص الخارجين عن القانون</h1>
 
-  <ul>
-    <li>لا يحق لك كلبشة الشخص في حال المخالفة المرورية إلا في حال عدم التعاون</li>
-    <li>في حال تم إلقاء القبض على مجرم، تذكر له حقوقه بالشكل الآتي:<br>(تم القبض عليك من قبل العسكري ... بتهمة ...، يحق لك التزام الصمت، أي كلمة تقولها ستُستخدم ضدك)</li>
-    <li>يجب وجود أدلة على الشخص ولا يمكن سجنه بدون وجود أدلة تثبت جريمته</li>
-    <li>أولاً يتم تأمين المتهم في الزنزانة ثم يُبلغ بأنه سيتم تفتيشه ومصادرة الممنوعات</li>
-    <li>يجب إعطاء فرصة للمجرم لتبرير موقفه وسماع تبريره الكامل</li>
-    <li>يتم تخفيض المحكومية على المتهم بنسبة 50٪ في حال تعاونه مع العسكري</li>
-  </ul>
+  <div class="laws-container">
+    <div class="law-box">لا يحق لك كلبشة الشخص في حال المخالفة المرورية إلا في حال عدم التعاون</div>
+    <div class="law-box">في حال تم إلقاء القبض على مجرم، تذكر له حقوقه بالشكل الآتي:<br>(تم القبض عليك من قبل العسكري ... بتهمة ...، يحق لك التزام الصمت، أي كلمة تقولها ستُستخدم ضدك)</div>
+    <div class="law-box">يجب وجود أدلة على الشخص ولا يمكن سجنه بدون وجود أدلة تثبت جريمته</div>
+    <div class="law-box">أولاً يتم تأمين المتهم في الزنزانة ثم يُبلغ بأنه سيتم تفتيشه ومصادرة الممنوعات</div>
+    <div class="law-box">يجب إعطاء فرصة للمجرم لتبرير موقفه وسماع تبريره الكامل</div>
+    <div class="law-box">يتم تخفيض المحكومية على المتهم بنسبة 50٪ في حال تعاونه مع العسكري</div>
+  </div>
 
   <div class="nav-buttons">
     <button class="nav-button" onclick="history.back()">◀️ السابق</button>
