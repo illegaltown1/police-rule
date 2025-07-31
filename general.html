@@ -18,6 +18,9 @@
       min-height: 100vh;
       padding: 60px 20px 40px 20px;
       animation: fadeIn 1s ease-in;
+      cursor: none; /* إخفاء مؤشر الماوس الافتراضي */
+      position: relative;
+      z-index: 0;
     }
 
     @keyframes fadeIn {
@@ -31,6 +34,8 @@
       margin-bottom: 40px;
       text-align: center;
       text-shadow: 0 0 8px #ffd700aa;
+      position: relative;
+      z-index: 1;
     }
 
     ul {
@@ -45,6 +50,8 @@
       list-style-type: decimal;
       color: #ffd700;
       animation: fadeIn 1.5s ease-in;
+      position: relative;
+      z-index: 1;
     }
 
     ul li {
@@ -64,6 +71,8 @@
       transition: background-color 0.3s ease, transform 0.2s ease;
       animation: fadeIn 1.8s ease-in;
       display: block;
+      position: relative;
+      z-index: 1;
     }
 
     .nav-button:hover {
@@ -93,6 +102,43 @@
       right: 30px;
     }
 
+    /* مؤشر الماوس الدائري */
+    #cursor {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffd700;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, border-color 0.3s ease;
+      z-index: 9999;
+      mix-blend-mode: difference;
+    }
+
+    /* أثر التلاشي */
+    .cursor-trail {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffd70099;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      opacity: 0.6;
+      animation: fadeOut 1s forwards;
+      z-index: 9998;
+      mix-blend-mode: difference;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+      }
+    }
   </style>
 </head>
 <body>
@@ -114,5 +160,31 @@
 
   <button class="nav-button" onclick="location.href='ranks.html'">التالي</button>
 
+  <!-- مؤشر الماوس -->
+  <div id="cursor"></div>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', e => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+
+      // إنشاء أثر متلاشي عند موقع الماوس
+      const trail = document.createElement('div');
+      trail.classList.add('cursor-trail');
+      trail.style.left = mouseX + 'px';
+      trail.style.top = mouseY + 'px';
+      document.body.appendChild(trail);
+
+      // إزالة الأثر بعد انتهاء الأنيميشن
+      trail.addEventListener('animationend', () => {
+        trail.remove();
+      });
+    });
+  </script>
 </body>
 </html>
