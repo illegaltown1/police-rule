@@ -16,7 +16,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      cursor: none; /* إخفاء مؤشر الماوس الافتراضي */
+      cursor: none;
       position: relative;
       z-index: 0;
     }
@@ -58,9 +58,17 @@
       text-shadow: 0 0 8px #ffea00cc;
     }
 
+    .buttons-container {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+      z-index: 1;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
     button.nav-button {
-      display: block;
-      margin: 0 auto;
       padding: 14px 36px;
       font-size: 20px;
       background-color: #ffd700;
@@ -71,8 +79,6 @@
       font-weight: bold;
       box-shadow: 0 6px 16px #e6d300cc;
       transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      position: relative;
-      z-index: 1;
     }
 
     button.nav-button:hover {
@@ -81,7 +87,17 @@
       box-shadow: 0 10px 30px #e6c200dd;
     }
 
-    /* مؤشر الماوس الدائري */
+    button.discord-button {
+      background-color: #5865F2;
+      color: white;
+    }
+
+    button.discord-button:hover {
+      background-color: #4752c4;
+      transform: scale(1.07);
+      box-shadow: 0 10px 30px #4752c4cc;
+    }
+
     #cursor {
       position: fixed;
       top: 0; left: 0;
@@ -96,7 +112,6 @@
       mix-blend-mode: difference;
     }
 
-    /* أثر التلاشي */
     .cursor-trail {
       position: fixed;
       top: 0; left: 0;
@@ -135,9 +150,11 @@
     <p><span>تم التحديث بتاريخ:</span> 21/07/2025</p>
   </div>
 
-  <button class="nav-button" onclick="history.back()">◀️ السابق</button>
+  <div class="buttons-container">
+    <button class="nav-button" onclick="history.back()">◀️ السابق</button>
+    <button class="nav-button discord-button" onclick="window.location.href='https://discord.gg/your-invite-code'">🔁 العودة إلى الديسكورد</button>
+  </div>
 
-  <!-- مؤشر الماوس -->
   <div id="cursor"></div>
 
   <script>
@@ -150,14 +167,378 @@
       cursor.style.left = mouseX + 'px';
       cursor.style.top = mouseY + 'px';
 
-      // إنشاء أثر متلاشي عند موقع الماوس
       const trail = document.createElement('div');
       trail.classList.add('cursor-trail');
       trail.style.left = mouseX + 'px';
       trail.style.top = mouseY + 'px';
       document.body.appendChild(trail);
 
-      // إزالة الأثر بعد انتهاء الأنيميشن
+      trail.addEventListener('animationend', () => {
+        trail.remove();
+      });
+    });
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>معلومات الدورة</title>
+  <style>
+    body {
+      background-color: #2f2f2f;
+      color: #ffd700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 40px 20px;
+      animation: fadeIn 1.5s ease-in;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: none;
+      position: relative;
+      z-index: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 30px;
+      color: #ffeb3b;
+      text-shadow: 0 0 15px #ffd700cc;
+      animation: fadeIn 2s ease-in;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-box {
+      background-color: #424242;
+      border-radius: 14px;
+      padding: 35px 45px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      max-width: 800px;
+      margin: 0 auto 50px auto;
+      font-size: 22px;
+      line-height: 2.2;
+      animation: fadeIn 2.5s ease-in;
+      color: #ffd700dd;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-box span {
+      color: #ffeb3b;
+      font-weight: 700;
+      text-shadow: 0 0 8px #ffea00cc;
+    }
+
+    .buttons-container {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+      z-index: 1;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    button.nav-button {
+      padding: 14px 36px;
+      font-size: 20px;
+      background-color: #ffd700;
+      color: #2f2f2f;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 6px 16px #e6d300cc;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    button.nav-button:hover {
+      background-color: #ffeb3b;
+      transform: scale(1.07);
+      box-shadow: 0 10px 30px #e6c200dd;
+    }
+
+    button.discord-button {
+      background-color: #5865F2;
+      color: white;
+    }
+
+    button.discord-button:hover {
+      background-color: #4752c4;
+      transform: scale(1.07);
+      box-shadow: 0 10px 30px #4752c4cc;
+    }
+
+    #cursor {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffd700;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, border-color 0.3s ease;
+      z-index: 9999;
+      mix-blend-mode: difference;
+    }
+
+    .cursor-trail {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffd70099;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      opacity: 0.6;
+      animation: fadeOut 1s forwards;
+      z-index: 9998;
+      mix-blend-mode: difference;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>معلومات الدورة</h1>
+
+  <div class="info-box">
+    <p><span>مسؤول الدورة:</span> هيجاوي</p>
+    <p><span>نائب مسؤول الدورة:</span> لا يوجد</p>
+    <p><span>المدربين:</span> هيجاوي</p>
+    <br />
+    <p><span>#</span> إدارة شرطة اليجل تاون</p>
+    <p><span>#</span> قوانين شرطة اليجل تاون</p>
+    <br />
+    <p><span>تم التحديث بتاريخ:</span> 21/07/2025</p>
+  </div>
+
+  <div class="buttons-container">
+    <button class="nav-button" onclick="history.back()">◀️ السابق</button>
+    <button class="nav-button discord-button" onclick="window.location.href='https://discord.gg/your-invite-code'">🔁 العودة إلى الديسكورد</button>
+  </div>
+
+  <div id="cursor"></div>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', e => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+
+      const trail = document.createElement('div');
+      trail.classList.add('cursor-trail');
+      trail.style.left = mouseX + 'px';
+      trail.style.top = mouseY + 'px';
+      document.body.appendChild(trail);
+
+      trail.addEventListener('animationend', () => {
+        trail.remove();
+      });
+    });
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>معلومات الدورة</title>
+  <style>
+    body {
+      background-color: #2f2f2f;
+      color: #ffd700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 40px 20px;
+      animation: fadeIn 1.5s ease-in;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: none;
+      position: relative;
+      z-index: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 30px;
+      color: #ffeb3b;
+      text-shadow: 0 0 15px #ffd700cc;
+      animation: fadeIn 2s ease-in;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-box {
+      background-color: #424242;
+      border-radius: 14px;
+      padding: 35px 45px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      max-width: 800px;
+      margin: 0 auto 50px auto;
+      font-size: 22px;
+      line-height: 2.2;
+      animation: fadeIn 2.5s ease-in;
+      color: #ffd700dd;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-box span {
+      color: #ffeb3b;
+      font-weight: 700;
+      text-shadow: 0 0 8px #ffea00cc;
+    }
+
+    .buttons-container {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+      z-index: 1;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    button.nav-button {
+      padding: 14px 36px;
+      font-size: 20px;
+      background-color: #ffd700;
+      color: #2f2f2f;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 6px 16px #e6d300cc;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    button.nav-button:hover {
+      background-color: #ffeb3b;
+      transform: scale(1.07);
+      box-shadow: 0 10px 30px #e6c200dd;
+    }
+
+    button.discord-button {
+      background-color: #5865F2;
+      color: white;
+    }
+
+    button.discord-button:hover {
+      background-color: #4752c4;
+      transform: scale(1.07);
+      box-shadow: 0 10px 30px #4752c4cc;
+    }
+
+    #cursor {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffd700;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, border-color 0.3s ease;
+      z-index: 9999;
+      mix-blend-mode: difference;
+    }
+
+    .cursor-trail {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffd70099;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      opacity: 0.6;
+      animation: fadeOut 1s forwards;
+      z-index: 9998;
+      mix-blend-mode: difference;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>معلومات الدورة</h1>
+
+  <div class="info-box">
+    <p><span>مسؤول الدورة:</span> هيجاوي</p>
+    <p><span>نائب مسؤول الدورة:</span> لا يوجد</p>
+    <p><span>المدربين:</span> هيجاوي</p>
+    <br />
+    <p><span>#</span> إدارة شرطة اليجل تاون</p>
+    <p><span>#</span> قوانين شرطة اليجل تاون</p>
+    <br />
+    <p><span>تم التحديث بتاريخ:</span> 21/07/2025</p>
+  </div>
+
+  <div class="buttons-container">
+    <button class="nav-button" onclick="history.back()">◀️ السابق</button>
+    <button class="nav-button discord-button" onclick="window.location.href='https://discord.gg/your-invite-code'">🔁 العودة إلى الديسكورد</button>
+  </div>
+
+  <div id="cursor"></div>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', e => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+
+      const trail = document.createElement('div');
+      trail.classList.add('cursor-trail');
+      trail.style.left = mouseX + 'px';
+      trail.style.top = mouseY + 'px';
+      document.body.appendChild(trail);
+
       trail.addEventListener('animationend', () => {
         trail.remove();
       });
