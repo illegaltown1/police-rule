@@ -32,29 +32,54 @@
       margin-bottom: 30px;
       color: #ffeb3b;
       animation: fadeIn 2s ease-in;
+      z-index: 1;
     }
 
-    ul {
-      list-style-type: none;
-      padding: 30px 40px;
+    /* حاوية الصناديق */
+    .laws-container {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 1;
+    }
+
+    /* صندوق القانون */
+    .law-box {
       background: #424242;
       border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-      max-width: 900px;
-      margin: 0 auto 40px auto;
+      padding: 22px 30px;
       font-size: 22px;
       line-height: 1.8;
-      animation: fadeIn 2.5s ease-in;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      color: #ffd700;
+      position: relative;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      cursor: default;
+      text-shadow: 0 0 6px #d4af37cc;
     }
 
-    ul li::before {
-      content: "• ";
+    .law-box:hover {
+      background-color: #4a4a4a;
+      transform: scale(1.03);
+    }
+
+    .law-box::before {
+      content: "•";
       color: #ffd700;
+      font-weight: bold;
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
+      font-size: 28px;
+      text-shadow: 0 0 8px #ffd700aa;
     }
 
     .nav-buttons {
       max-width: 440px;
-      margin: 0 auto 40px;
+      margin: 40px auto 0 auto;
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -190,12 +215,12 @@
   <!-- المحتوى -->
   <h1>بروتوكول التحية</h1>
 
-  <ul>
-    <li>يقوم المسؤول بأمر العساكر بالاستعداد وهنا يقوم جميع العساكر برفع التحية</li>
-    <li>ممنوع منعا باتا التكلم أثناء رفع التحية</li>
-    <li>يسمح التكلم بعدما يقول المسؤول "استرح"</li>
-    <li>التعريف عن النفس: مثال "أنا أحمد U-150 جندي أعمل بوزارة الداخلية"</li>
-  </ul>
+  <div class="laws-container">
+    <div class="law-box">يقوم المسؤول بأمر العساكر بالاستعداد وهنا يقوم جميع العساكر برفع التحية</div>
+    <div class="law-box">ممنوع منعا باتا التكلم أثناء رفع التحية</div>
+    <div class="law-box">يسمح التكلم بعدما يقول المسؤول "استرح"</div>
+    <div class="law-box">التعريف عن النفس: مثال "أنا أحمد U-150 جندي أعمل بوزارة الداخلية"</div>
+  </div>
 
   <div class="nav-buttons">
     <button class="nav-button" onclick="history.back()">◀️ السابق</button>
