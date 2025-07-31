@@ -40,9 +40,15 @@
       content: "• ";
       color: #ffd700;
     }
-    button.nav-button {
-      display: block;
+    .nav-buttons {
+      max-width: 440px;
       margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    button.nav-button {
+      flex: 1;
       padding: 12px 28px;
       font-size: 20px;
       background-color: #ffd700;
@@ -57,6 +63,15 @@
     button.nav-button:hover {
       background-color: #ffeb3b;
     }
+    @media (max-width: 480px) {
+      .nav-buttons {
+        flex-direction: column;
+        gap: 12px;
+      }
+      button.nav-button {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -70,7 +85,10 @@
     <li>التعريف عن النفس: مثال "أنا أحمد U-150 جندي أعمل بوزارة الداخلية"</li>
   </ul>
 
-  <button class="nav-button" onclick="location.href='end.html'">التالي</button>
+  <div class="nav-buttons">
+    <button class="nav-button" onclick="history.back()">◀️ السابق</button>
+    <button class="nav-button" onclick="location.href='end.html'">التالي ▶️</button>
+  </div>
 
 </body>
 </html>
