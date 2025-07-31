@@ -5,127 +5,106 @@
   <title>الأكواد العسكرية</title>
   <style>
     body {
-      background-color: #2f2f2f; /* رمادي غامق */
-      color: #ffd700; /* أصفر */
+      background: linear-gradient(135deg, #1a1a1a, #333333);
+      color: #f0c419;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       direction: rtl;
       margin: 0;
-      padding: 40px 20px;
+      padding: 50px 20px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
-      overflow-x: hidden;
-      animation: fadeIn 1.5s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      justify-content: flex-start;
     }
 
     h1 {
-      text-align: center;
-      font-size: 38px;
-      margin-bottom: 30px;
-      color: #ffeb3b;
-      text-shadow: 0 0 12px #ffd700cc, 0 0 20px #ffeb3bbb;
-      animation: fadeIn 2s ease-in;
+      font-size: 40px;
+      margin-bottom: 40px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #f0c419;
+      border-bottom: 3px solid #f0c419;
+      padding-bottom: 10px;
+      width: fit-content;
     }
 
     ul {
-      list-style-type: none;
-      padding: 0;
-      background: #424242;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-      max-width: 600px;
-      margin: 0 auto 40px auto;
+      list-style: none;
+      max-width: 650px;
+      width: 100%;
+      background-color: #2b2b2b;
+      border-radius: 12px;
       padding: 35px 40px;
-      font-size: 22px;
-      line-height: 2;
-      animation: fadeIn 2.5s ease-in;
+      box-shadow: 0 4px 15px rgba(240, 196, 25, 0.3);
+      font-size: 20px;
+      line-height: 1.7;
+      color: #f0c419;
+      transition: background-color 0.3s ease;
     }
 
     ul li {
-      margin-bottom: 18px;
-      color: #ffd700;
-      text-shadow: 0 0 6px #d4af37cc;
+      margin-bottom: 16px;
+      padding-left: 20px;
+      position: relative;
+      cursor: default;
+    }
+
+    ul li:last-child {
+      margin-bottom: 0;
     }
 
     ul li::before {
-      content: "• ";
-      color: #ffd700;
+      content: "➤";
+      position: absolute;
+      right: 0;
+      color: #f0c419;
       font-weight: bold;
-      text-shadow: 0 0 8px #ffea0077;
+      font-size: 18px;
+      top: 3px;
+    }
+
+    ul li:hover {
+      background-color: #3a3a3a;
+      border-radius: 8px;
+      padding-left: 18px;
+      transition: background-color 0.3s ease;
     }
 
     button.nav-button {
-      display: block;
-      margin: 0 auto;
-      padding: 14px 36px;
-      font-size: 20px;
-      background-color: #ffd700;
-      color: #2f2f2f;
+      margin-top: 45px;
+      padding: 14px 40px;
+      font-size: 22px;
+      background-color: #f0c419;
       border: none;
       border-radius: 14px;
       cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 6px 16px #e6d300cc;
+      color: #1a1a1a;
+      font-weight: 700;
+      box-shadow: 0 5px 15px rgba(240, 196, 25, 0.6);
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     button.nav-button:hover {
-      background-color: #ffeb3b;
+      background-color: #ddb917;
       transform: scale(1.05);
-      box-shadow: 0 8px 24px #e6c200dd;
+      box-shadow: 0 7px 20px rgba(221, 185, 23, 0.8);
     }
 
-    /* دوائر ضوئية متوهجة */
-    .glow-circle {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(40px);
-      opacity: 0.15;
-      pointer-events: none;
-    }
-
-    .glow-top {
-      width: 280px;
-      height: 280px;
-      top: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: radial-gradient(circle, #ffd700 45%, transparent 80%);
-      animation: pulseGlow 4s ease-in-out infinite;
-    }
-
-    .glow-bottom {
-      width: 350px;
-      height: 350px;
-      bottom: 35px;
-      right: 12%;
-      background: radial-gradient(circle, #ffeb3b 40%, transparent 75%);
-      animation: pulseGlow 5s ease-in-out infinite;
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% {
-        opacity: 0.15;
-        transform: translateX(-50%) scale(1);
+    @media (max-width: 700px) {
+      ul {
+        padding: 25px 20px;
+        font-size: 18px;
       }
-      50% {
-        opacity: 0.3;
-        transform: translateX(-50%) scale(1.1);
+
+      button.nav-button {
+        width: 100%;
+        font-size: 20px;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="glow-circle glow-top"></div>
-  <div class="glow-circle glow-bottom"></div>
 
   <h1>الأكواد العسكرية</h1>
 
