@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>مركز العمليات (الديسباتش)</title>
+  <style>
+    body {
+      background-color: #2f2f2f; /* رمادي غامق */
+      color: #ffd700; /* أصفر */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 40px 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #ffeb3b;
+      animation: fadeIn 2s ease-in;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      background: #424242;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 40px;
+      font-size: 22px;
+      line-height: 1.8;
+      animation: fadeIn 2.5s ease-in;
+    }
+    ul li::before {
+      content: "• ";
+      color: #ffd700;
+    }
+    p {
+      max-width:900px;
+      margin: 20px auto;
+      font-size: 20px;
+      background:#3a3a3a;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    .nav-button {
+      display: block;
+      margin: 30px auto 0;
+      background-color: #ffd700;
+      color: #2f2f2f;
+      border: none;
+      padding: 12px 40px;
+      font-size: 22px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(255, 215, 0, 0.7);
+      transition: background-color 0.3s ease;
+      text-align: center;
+      font-weight: bold;
+      max-width: 200px;
+      animation: fadeIn 2.8s ease-in;
+    }
+    .nav-button:hover {
+      background-color: #e6c200;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>مركز العمليات (الديسباتش)</h1>
+
+  <ul>
+    <li>توجيه الوحدات للمواقع والسرقات</li>
+    <li>مراقبة العساكر في الميدان</li>
+    <li>ارسال تعاميم واموامر للعساكر</li>
+    <li>تذكير الوحدات بالتعميم والاشخاص المطلوبين</li>
+    <li>التاكد من الواحدان المشغولة والوحدات الشاغرة</li>
+  </ul>
+
+  <p>
+    الوحدات الشاغرة هي اي عسكري او دورية ليس لديها اي بلاغ ومتفرغة لاي بلاغ قادم من العمليات
+  </p>
+
+  <button class="nav-button" onclick="location.href='proto.html'">التالي</button>
+
+</body>
+</html>
