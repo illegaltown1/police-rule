@@ -12,6 +12,9 @@
       margin: 0;
       padding: 40px 20px;
       animation: fadeIn 1.5s ease-in;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -23,6 +26,8 @@
       margin-bottom: 30px;
       color: #ffeb3b;
       animation: fadeIn 2s ease-in;
+      position: relative;
+      z-index: 10;
     }
     ul {
       list-style-type: none;
@@ -36,6 +41,8 @@
       font-size: 22px;
       line-height: 1.8;
       animation: fadeIn 2.5s ease-in;
+      position: relative;
+      z-index: 10;
     }
     ul li::before {
       content: "• ";
@@ -52,14 +59,61 @@
       border-radius: 10px;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
+      position: relative;
+      z-index: 10;
     }
     .nav-button:hover {
       background-color: #ffca28;
       transform: scale(1.05);
     }
+
+    /* دوائر ضوئية متوهجة */
+    .glow-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 235, 59, 0.15);
+      box-shadow: 0 0 60px 20px rgba(255, 235, 59, 0.3);
+      filter: blur(40px);
+      z-index: 1;
+    }
+    .top-glow {
+      width: 220px;
+      height: 220px;
+      top: 10px;
+      right: 30px;
+    }
+    .top-glow.second {
+      width: 150px;
+      height: 150px;
+      top: 80px;
+      right: 180px;
+      background: rgba(255, 235, 59, 0.1);
+      box-shadow: 0 0 40px 15px rgba(255, 235, 59, 0.2);
+    }
+    .bottom-glow {
+      width: 300px;
+      height: 300px;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(255, 235, 59, 0.12);
+      box-shadow: 0 0 70px 25px rgba(255, 235, 59, 0.25);
+    }
+    .bottom-glow.second {
+      width: 180px;
+      height: 180px;
+      bottom: 80px;
+      left: 200px;
+      background: rgba(255, 235, 59, 0.08);
+      box-shadow: 0 0 40px 12px rgba(255, 235, 59, 0.15);
+    }
   </style>
 </head>
 <body>
+
+  <div class="glow-circle top-glow"></div>
+  <div class="glow-circle top-glow second"></div>
+  <div class="glow-circle bottom-glow"></div>
+  <div class="glow-circle bottom-glow second"></div>
 
   <h1>قوانين المطاردات</h1>
 
