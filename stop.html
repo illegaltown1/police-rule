@@ -2,6 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>الاستيقاف المروري</title>
   <style>
     body {
@@ -10,64 +11,100 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       direction: rtl;
       margin: 0;
-      padding: 40px 20px;
+      padding: 60px 20px 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       animation: fadeIn 1.5s ease-in;
+      position: relative;
+      overflow-x: hidden;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
     h1 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 30px;
+      font-size: 3rem;
+      margin-bottom: 40px;
       color: #ffeb3b;
+      text-align: center;
+      text-shadow: 0 0 12px #ffd700cc;
       animation: fadeIn 2s ease-in;
     }
-    p, li {
-      font-size: 22px;
-      line-height: 1.8;
-      margin-bottom: 15px;
-      animation: fadeIn 2.5s ease-in;
+    .section-title {
+      font-size: 1.8rem;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      color: #ffeb3b;
+      font-weight: bold;
+      animation: fadeIn 2.2s ease-in;
+      max-width: 900px;
+      width: 100%;
+      text-align: right;
+      text-shadow: 0 0 8px #ffd700bb;
     }
     ul {
       list-style-type: none;
       padding: 0;
       background: #424242;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       max-width: 900px;
-      margin: 0 auto;
+      width: 100%;
       padding: 30px 40px;
+      color: #ffd700;
+      font-size: 1.3rem;
+      line-height: 1.8;
     }
     ul li::before {
       content: "• ";
       color: #ffd700;
-    }
-    .section-title {
-      font-size: 26px;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      color: #ffeb3b;
       font-weight: bold;
-      animation: fadeIn 2.2s ease-in;
+    }
+    ul li {
+      margin-bottom: 15px;
     }
     .nav-button {
       display: block;
-      margin: 40px auto 0 auto;
-      padding: 12px 30px;
-      font-size: 20px;
+      margin: 50px auto 0;
+      padding: 15px 50px;
+      font-size: 1.3rem;
       font-weight: bold;
-      color: #2f2f2f;
       background-color: #ffd700;
+      color: #2f2f2f;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.7);
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px #ffd700cc;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      animation: fadeIn 2s ease-in;
     }
     .nav-button:hover {
-      background-color: #ffeb3b;
+      background-color: #ffca28;
+      transform: scale(1.05);
+    }
+
+    /* ديكور خلفي دائري */
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #ffd70088 40%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+      z-index: 0;
+    }
+
+    body::before {
+      top: 50px;
+      left: 50px;
+    }
+
+    body::after {
+      bottom: 50px;
+      right: 50px;
     }
   </style>
 </head>
@@ -77,21 +114,21 @@
 
   <div class="section-title">قبل التوقيف :</div>
   <ul>
-    <li>تشغيل أضواء التنبيه وصفارات الانذار ان لزم</li>
-    <li>استخدام الراديو لابلاغ عن توقيف مروري وذكر الموقع ومواصفات المركبة</li>
+    <li>تشغيل أضواء التنبيه وصفارات الإنذار إن لزم</li>
+    <li>استخدام الراديو لإبلاغ عن توقيف مروري وذكر الموقع ومواصفات المركبة</li>
   </ul>
 
-  <div class="section-title">اثناء التوقيف :</div>
+  <div class="section-title">أثناء التوقيف :</div>
   <ul>
-    <li>التوجه بحذر الى جانب السائق</li>
-    <li>التعريف بنفسك الاسم والرتبة</li>
-    <li>اخبار السائق بسبب التوقيف</li>
+    <li>التوجه بحذر إلى جانب السائق</li>
+    <li>التعريف بنفسك (الاسم والرتبة)</li>
+    <li>إخبار السائق بسبب التوقيف</li>
     <li>طلب الهوية ورخصة القيادة واستمارة المركبة</li>
   </ul>
 
   <div class="section-title">بعد الفحص :</div>
   <ul>
-    <li>اصدار مخالفة ان وجدت او تحذير شفوي</li>
+    <li>إصدار مخالفة إن وجدت أو تحذير شفوي</li>
   </ul>
 
   <button class="nav-button" onclick="location.href='go.html'">التالي</button>
