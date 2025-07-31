@@ -39,24 +39,29 @@
       z-index: 1;
     }
 
-    ul {
-      background-color: #424242;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      padding: 30px 40px;
+    .laws-container {
       max-width: 900px;
       width: 100%;
-      font-size: 1.3rem;
-      line-height: 2.2;
-      list-style-type: decimal;
-      color: #ffd700;
-      animation: fadeIn 1.5s ease-in;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
       z-index: 1;
     }
 
-    ul li {
-      margin-bottom: 15px;
+    .law-box {
+      background-color: #424242;
+      border-radius: 12px;
+      padding: 20px 25px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      color: #ffd700;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .law-box:hover {
+      background-color: #4f4f4f;
+      transform: scale(1.02);
     }
 
     .nav-buttons {
@@ -67,6 +72,8 @@
       animation: fadeIn 1.8s ease-in;
       position: relative;
       z-index: 1;
+      max-width: 900px;
+      width: 100%;
     }
 
     .nav-button {
@@ -79,6 +86,10 @@
       cursor: pointer;
       box-shadow: 0 4px 10px #ffd700cc;
       transition: background-color 0.3s ease, transform 0.2s ease;
+      font-weight: bold;
+      flex: 1;
+      max-width: 200px;
+      text-align: center;
     }
 
     .nav-button:hover {
@@ -145,20 +156,31 @@
         transform: translate(-50%, -50%) scale(2);
       }
     }
+
+    /* استجابة الجوال */
+    @media (max-width: 600px) {
+      .nav-buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .nav-button {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
 
   <h1>قوانين الرتب العسكرية</h1>
 
-  <ul>
-    <li>يجب مناداة الرتب التالية بـ "حضرة": ملازم، ملازم أول، نقيب، رائد، مقدم، عقيد.</li>
-    <li>يجب مناداة رتبي "عميد" و "لواء" بـ "سعادة".</li>
-    <li>يجب مناداة "فريق" و "فريق أول" بـ "معالي الفريق" أو "معالي الفريق الأول".</li>
-    <li>يمنع تقليد أو انتحال أي رتبة بدون ترقية رسمية.</li>
-    <li>احترام تسلسل الأوامر العسكرية وعدم تخطي الرتب العليا.</li>
-    <li>تنفيذ الأوامر العسكرية من الرتب الأعلى بكل التزام.</li>
-  </ul>
+  <div class="laws-container">
+    <div class="law-box">1. يجب مناداة الرتب التالية بـ "حضرة": ملازم، ملازم أول، نقيب، رائد، مقدم، عقيد.</div>
+    <div class="law-box">2. يجب مناداة رتبي "عميد" و "لواء" بـ "سعادة".</div>
+    <div class="law-box">3. يجب مناداة "فريق" و "فريق أول" بـ "معالي الفريق" أو "معالي الفريق الأول".</div>
+    <div class="law-box">4. يمنع تقليد أو انتحال أي رتبة بدون ترقية رسمية.</div>
+    <div class="law-box">5. احترام تسلسل الأوامر العسكرية وعدم تخطي الرتب العليا.</div>
+    <div class="law-box">6. تنفيذ الأوامر العسكرية من الرتب الأعلى بكل التزام.</div>
+  </div>
 
   <div class="nav-buttons">
     <button class="nav-button" onclick="history.back()">◀️ السابق</button>
