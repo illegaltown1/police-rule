@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>معلومات الدورة</title>
+  <style>
+    body {
+      background-color: #2f2f2f;
+      color: #ffd700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 40px 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #ffeb3b;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .info-box {
+      background-color: #424242;
+      border-radius: 12px;
+      padding: 30px 40px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      font-size: 22px;
+      line-height: 2;
+      animation: fadeIn 2.5s ease-in;
+    }
+
+    .info-box span {
+      color: #ffeb3b;
+      font-weight: bold;
+    }
+
+    button.nav-button {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 28px;
+      font-size: 20px;
+      background-color: #ffd700;
+      color: #2f2f2f;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(255, 215, 0, 0.7);
+    }
+
+    button.nav-button:hover {
+      background-color: #ffeb3b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>معلومات الدورة</h1>
+
+  <div class="info-box">
+    <p><span>مسؤول الدورة:</span> هيجاوي</p>
+    <p><span>نائب مسؤول الدورة:</span> لا يوجد</p>
+    <p><span>المدربين:</span> هيجاوي</p>
+    <br />
+    <p><span>#</span> إدارة شرطة اليجل تاون</p>
+    <p><span>#</span> قوانين شرطة اليجل تاون</p>
+    <br />
+    <p><span>تم التحديث بتاريخ:</span> 21/07/2025</p>
+  </div>
+
+  <button class="nav-button" onclick="alert('تم الانتهاء من الدورة، شكرًا لك!')">إنهاء</button>
+
+</body>
+</html>
