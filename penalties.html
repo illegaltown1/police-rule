@@ -2,6 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>بروتوكولات الراديو</title>
   <style>
     body {
@@ -10,64 +11,108 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       direction: rtl;
       margin: 0;
-      padding: 40px 20px;
+      padding: 60px 20px 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       animation: fadeIn 1.5s ease-in;
+      position: relative;
+      overflow-x: hidden;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
     h1 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 30px;
+      font-size: 3rem;
+      margin-bottom: 40px;
       color: #ffeb3b;
+      text-align: center;
+      text-shadow: 0 0 10px #ffd700cc;
       animation: fadeIn 2s ease-in;
     }
-    p, li {
-      font-size: 22px;
+    p {
+      font-size: 1.2rem;
       line-height: 1.8;
       margin-bottom: 15px;
+      max-width: 900px;
       animation: fadeIn 2.5s ease-in;
+      text-align: right;
     }
     ul {
       list-style-type: none;
       padding: 0;
       background: #424242;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       max-width: 900px;
-      margin: 0 auto;
+      width: 100%;
       padding: 30px 40px;
+      margin: 0 auto 40px auto;
+      font-size: 1.3rem;
+      color: #ffd700;
     }
     ul li::before {
       content: "• ";
       color: #ffd700;
+      font-weight: bold;
+    }
+    ul li {
+      margin-bottom: 15px;
     }
     .example {
       background: #3a3a3a;
-      border-radius: 12px;
-      padding: 20px;
+      border-radius: 15px;
+      padding: 25px 30px;
       margin-top: 25px;
-      font-size: 20px;
+      font-size: 1.1rem;
       font-style: italic;
-      box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.5);
+      box-shadow: inset 0 0 15px rgba(255, 215, 0, 0.5);
+      max-width: 900px;
+      width: 100%;
+      color: #ffe680;
+      text-align: right;
     }
     .nav-button {
       display: block;
       margin: 40px auto 0;
-      padding: 15px 40px;
-      font-size: 20px;
+      padding: 15px 50px;
+      font-size: 1.3rem;
       background-color: #ffd700;
       color: #2f2f2f;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
+      box-shadow: 0 4px 10px #ffd700cc;
       transition: background-color 0.3s ease, transform 0.2s ease;
+      animation: fadeIn 2s ease-in;
     }
     .nav-button:hover {
       background-color: #ffca28;
       transform: scale(1.05);
+    }
+
+    /* ديكور خلفي دائري */
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #ffd70088 40%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+      z-index: 0;
+    }
+
+    body::before {
+      top: 40px;
+      left: 40px;
+    }
+
+    body::after {
+      bottom: 40px;
+      right: 40px;
     }
   </style>
 </head>
@@ -79,15 +124,15 @@
 
   <ul>
     <li>ممنوع منعا باتا مقاطعة البلاغات في حال بلاغك مهم تذكر قبل البلاغ (بلاغ للاهمية)</li>
-    <li>ممنوع استخدام اكواد الشرطة لاختصار البلاغات</li>
-    <li>ممنوع منعا باتا الازعاج بالراديو او التكلم باشياء خارجية او للمزح</li>
-    <li>يجب عليك ترتيب البلاغ قبل تمريره بالراديو لتجنب التاتاه او التردد</li>
-    <li>يمنع منعا باتا التوجه الى مكان بدون توجيه العمليات</li>
+    <li>ممنوع استخدام أكواد الشرطة لاختصار البلاغات</li>
+    <li>ممنوع منعا باتا الإزعاج بالراديو أو التكلم بأشياء خارجية أو للمزاح</li>
+    <li>يجب عليك ترتيب البلاغ قبل تمريره بالراديو لتجنب التأتأة أو التردد</li>
+    <li>يمنع منعا باتا التوجه إلى مكان بدون توجيه العمليات</li>
   </ul>
 
   <div class="example">
     <p>مثال على مكالمة صحيحة عبر الراديو 👮:</p>
-    <p>من كودك العسكري الى مركز العمليات كود 8 على مركبة سكودا باللون الابيض متجه الى الملكية كذلك وجهلي كود 10 وحدتين.</p>
+    <p>من كودك العسكري إلى مركز العمليات كود 8 على مركبة سكودا باللون الأبيض متجه إلى الملكية كذلك وجهلي كود 10 وحدتين.</p>
   </div>
 
   <button class="nav-button" onclick="location.href='stop.html'">التالي</button>
