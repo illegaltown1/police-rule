@@ -3,119 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ترحيب - قوانين وزارة الداخلية</title>
+  <title>قوانين وزارة الداخلية - ترحيب</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(160deg, #2f2f2f, #1e1e1e);
+      background-color: #1f1f1f;
       color: #ffd700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       overflow: hidden;
-      position: relative;
+      background-image: radial-gradient(circle at center, #2f2f2f, #1a1a1a);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: #fff59d;
-      opacity: 0.8;
-      border-radius: 50%;
-      animation: twinkle 3s infinite ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 1; }
+    .card {
+      text-align: center;
+      padding: 60px 40px;
+      border-radius: 20px;
+      background-color: #2a2a2a;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
+      width: 90%;
+      max-width: 600px;
     }
 
     h1 {
-      font-size: 3.2em;
-      margin-top: 150px;
+      font-size: 2.6em;
       color: #ffeb3b;
-      text-shadow: 0 0 15px #ffeb3b77;
-      animation: fadeIn 1.2s ease-in;
+      margin-bottom: 30px;
+      text-shadow: 0 0 8px #ffd70044;
     }
 
-    button {
-      font-size: 1.6em;
-      padding: 15px 40px;
-      cursor: pointer;
+    .start-button {
+      font-size: 1.4em;
+      padding: 15px 35px;
       background-color: #ffd700;
-      color: #2f2f2f;
+      color: #1f1f1f;
       border: none;
-      border-radius: 10px;
-      position: fixed;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      animation: fadeIn 1.5s ease-in;
-      box-shadow: 0 0 12px #ffd70066;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 0 10px #ffeb3b44;
     }
 
-    button:hover {
+    .start-button:hover {
       background-color: #ffca28;
       transform: scale(1.05);
     }
 
-    .top-decor, .bottom-decor {
-      width: 100%;
-      height: 10px;
-      background: repeating-linear-gradient(
-        to right,
-        #ffd700,
-        #ffd700 20px,
-        transparent 20px,
-        transparent 40px
-      );
-      opacity: 0.3;
+    .glow-circle {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffd70022, transparent 70%);
+      top: 20%;
+      left: 10%;
+      pointer-events: none;
+      animation: float 6s ease-in-out infinite;
     }
 
-    .top-decor {
-      position: absolute;
-      top: 0;
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(20px);
+      }
     }
 
-    .bottom-decor {
-      position: absolute;
-      bottom: 0;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <div class="top-decor"></div>
-  <div class="stars" id="stars"></div>
 
-  <h1>قوانين شرطة مدينة اليجل تاون</h1>
+  <div class="glow-circle"></div>
 
-  <button onclick="location.href='general.html'">أكمل</button>
+  <div class="card">
+    <h1>قوانين شرطة مدينة اليجل تاون</h1>
+    <button class="start-button" onclick="location.href='general.html'">أكمل</button>
+  </div>
 
-  <div class="bottom-decor"></div>
-
-  <script>
-    const starField = document.getElementById('stars');
-    for (let i = 0; i < 50; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      star.style.top = `${Math.random() * 100}%`;
-      star.style.left = `${Math.random() * 100}%`;
-      starField.appendChild(star);
-    }
-  </script>
 </body>
 </html>
