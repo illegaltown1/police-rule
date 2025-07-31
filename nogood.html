@@ -18,6 +18,7 @@
       position: relative;
       overflow-x: hidden;
       animation: fadeIn 1.5s ease-in;
+      cursor: none;
     }
 
     @keyframes fadeIn {
@@ -87,7 +88,7 @@
       box-shadow: 0 8px 24px #e6c200dd;
     }
 
-    /* دوائر ضوئية متوهجة في الأعلى والأسفل */
+    /* دوائر ضوئية */
     .glow-circle {
       position: absolute;
       border-radius: 50%;
@@ -125,6 +126,43 @@
         transform: translateX(-50%) scale(1.1);
       }
     }
+
+    /* مؤشر الماوس الدائري */
+    #cursor {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffd700;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, border-color 0.3s ease;
+      z-index: 9999;
+      mix-blend-mode: difference;
+    }
+
+    .cursor-trail {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffd70099;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      opacity: 0.6;
+      animation: fadeOut 1s forwards;
+      z-index: 9998;
+      mix-blend-mode: difference;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+      }
+    }
   </style>
 </head>
 <body>
@@ -147,6 +185,31 @@
     <button class="nav-button" onclick="history.back()">◀️ السابق</button>
     <button class="nav-button" onclick="location.href='diis.html'">التالي ▶️</button>
   </div>
+
+  <!-- مؤشر الماوس -->
+  <div id="cursor"></div>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', e => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+
+      const trail = document.createElement('div');
+      trail.classList.add('cursor-trail');
+      trail.style.left = mouseX + 'px';
+      trail.style.top = mouseY + 'px';
+      document.body.appendChild(trail);
+
+      trail.addEventListener('animationend', () => {
+        trail.remove();
+      });
+    });
+  </script>
 
 </body>
 </html>
