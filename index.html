@@ -16,6 +16,7 @@
       height: 100vh;
       overflow: hidden;
       background-image: radial-gradient(circle at center, #2f2f2f, #1a1a1a);
+      cursor: none; /* إخفاء مؤشر الماوس الافتراضي */
     }
 
     .card {
@@ -27,6 +28,8 @@
       animation: fadeIn 1s ease-in-out;
       width: 90%;
       max-width: 600px;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
@@ -63,6 +66,7 @@
       left: 10%;
       pointer-events: none;
       animation: float 6s ease-in-out infinite;
+      z-index: 0;
     }
 
     @keyframes float {
@@ -78,6 +82,44 @@
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    /* مؤشر الماوس الدائري */
+    #cursor {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffd700;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, border-color 0.3s ease;
+      z-index: 9999;
+      mix-blend-mode: difference; /* لجعل الدائرة تظهر بشكل أفضل على خلفيات داكنة */
+    }
+
+    /* أثر التلاشي */
+    .cursor-trail {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffd70099;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      opacity: 0.6;
+      animation: fadeOut 1s forwards;
+      z-index: 9998;
+      mix-blend-mode: difference;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+      }
+    }
   </style>
 </head>
 <body>
@@ -88,6 +130,33 @@
     <h1>قوانين شرطة مدينة اليجل تاون</h1>
     <button class="start-button" onclick="location.href='general.html'">أكمل</button>
   </div>
+
+  <!-- مؤشر الماوس -->
+  <div id="cursor"></div>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', e => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+
+      // إنشاء أثر متلاشي عند موقع الماوس
+      const trail = document.createElement('div');
+      trail.classList.add('cursor-trail');
+      trail.style.left = mouseX + 'px';
+      trail.style.top = mouseY + 'px';
+      document.body.appendChild(trail);
+
+      // إزالة الأثر بعد انتهاء الأنيميشن
+      trail.addEventListener('animationend', () => {
+        trail.remove();
+      });
+    });
+  </script>
 
 </body>
 </html>
