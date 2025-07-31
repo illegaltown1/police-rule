@@ -16,7 +16,7 @@
       height: 100vh;
       overflow: hidden;
       background-image: radial-gradient(circle at center, #2f2f2f, #1a1a1a);
-      cursor: none; /* إخفاء مؤشر الماوس الافتراضي */
+      cursor: none;
     }
 
     .card {
@@ -39,20 +39,42 @@
       text-shadow: 0 0 8px #ffd70044;
     }
 
-    .start-button {
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .start-button, .discord-button {
       font-size: 1.4em;
       padding: 15px 35px;
-      background-color: #ffd700;
-      color: #1f1f1f;
       border: none;
       border-radius: 12px;
       cursor: pointer;
       transition: 0.3s ease;
       box-shadow: 0 0 10px #ffeb3b44;
+      font-weight: bold;
+    }
+
+    .start-button {
+      background-color: #ffd700;
+      color: #1f1f1f;
     }
 
     .start-button:hover {
       background-color: #ffca28;
+      transform: scale(1.05);
+    }
+
+    .discord-button {
+      background-color: #5865F2;
+      color: white;
+      box-shadow: 0 0 10px #5865F277;
+    }
+
+    .discord-button:hover {
+      background-color: #4752c4;
       transform: scale(1.05);
     }
 
@@ -70,12 +92,8 @@
     }
 
     @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(20px);
-      }
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(20px); }
     }
 
     @keyframes fadeIn {
@@ -95,10 +113,9 @@
       transform: translate(-50%, -50%);
       transition: width 0.2s ease, height 0.2s ease, border-color 0.3s ease;
       z-index: 9999;
-      mix-blend-mode: difference; /* لجعل الدائرة تظهر بشكل أفضل على خلفيات داكنة */
+      mix-blend-mode: difference;
     }
 
-    /* أثر التلاشي */
     .cursor-trail {
       position: fixed;
       top: 0; left: 0;
@@ -128,10 +145,13 @@
 
   <div class="card">
     <h1>قوانين شرطة مدينة اليجل تاون</h1>
-    <button class="start-button" onclick="location.href='general.html'">أكمل</button>
+
+    <div class="buttons-container">
+      <button class="start-button" onclick="location.href='general.html'">أكمل</button>
+      <button class="discord-button" onclick="window.location.href='https://discord.gg/ZpC2espv'">العودة إلى الديسكورد</button>
+    </div>
   </div>
 
-  <!-- مؤشر الماوس -->
   <div id="cursor"></div>
 
   <script>
@@ -144,14 +164,12 @@
       cursor.style.left = mouseX + 'px';
       cursor.style.top = mouseY + 'px';
 
-      // إنشاء أثر متلاشي عند موقع الماوس
       const trail = document.createElement('div');
       trail.classList.add('cursor-trail');
       trail.style.left = mouseX + 'px';
       trail.style.top = mouseY + 'px';
       document.body.appendChild(trail);
 
-      // إزالة الأثر بعد انتهاء الأنيميشن
       trail.addEventListener('animationend', () => {
         trail.remove();
       });
