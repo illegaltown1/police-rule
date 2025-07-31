@@ -1,87 +1,118 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>القوانين العامة</title>
   <style>
     body {
       direction: rtl;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #2f2f2f; /* رمادي غامق */
-      color: #ffd700; /* أصفر ذهبي */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #2f2f2f;
+      color: #ffd700;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      padding: 60px 20px 40px 20px;
       animation: fadeIn 1s ease-in;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
     h1 {
-      text-align: center;
-      color: #ffeb3b; /* أصفر فاتح */
-      font-size: 38px;
+      color: #ffeb3b;
+      font-size: 3rem;
       margin-bottom: 40px;
-      animation: fadeIn 1.5s ease-in;
+      text-align: center;
+      text-shadow: 0 0 8px #ffd700aa;
     }
 
     ul {
-      font-size: 22px;
-      line-height: 2;
-      background: #424242; /* رمادي أفتح داخل الصندوق */
-      padding: 30px;
+      background-color: #424242;
       border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      animation: fadeIn 1.8s ease-in;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      padding: 30px 40px;
+      max-width: 900px;
+      width: 100%;
+      font-size: 1.3rem;
+      line-height: 2.2;
+      list-style-type: decimal;
+      color: #ffd700;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    ul li {
+      margin-bottom: 15px;
     }
 
     .nav-button {
-      display: block;
       margin: 50px auto 0;
-      padding: 15px 40px;
-      font-size: 20px;
+      padding: 15px 50px;
+      font-size: 1.3rem;
       background-color: #ffd700;
       color: #2f2f2f;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
+      box-shadow: 0 4px 10px #ffd700cc;
       transition: background-color 0.3s ease, transform 0.2s ease;
-      animation: fadeIn 2s ease-in;
+      animation: fadeIn 1.8s ease-in;
+      display: block;
     }
 
     .nav-button:hover {
       background-color: #ffca28;
       transform: scale(1.05);
     }
+
+    /* ديكور بسيط أعلى وأسفل الصفحة */
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #ffd70088 40%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+      z-index: 0;
+    }
+
+    body::before {
+      top: 30px;
+      left: 30px;
+    }
+
+    body::after {
+      bottom: 30px;
+      right: 30px;
+    }
+
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>القوانين العامة</h1>
+  <h1>القوانين العامة</h1>
 
-    <ul>
-      <li>يجب احترام تسلسل الرتب</li>
-      <li>ممنوع استخدام صلاحية الشرطة لشيء شخصي أو بشكل مسيء</li>
-      <li>يجب التعامل مع الجميع باحترام حتى أثناء الاعتقال والتحقيق</li>
-      <li>ممنوع منعا باتا عصيان أوامر الرتب العليا ويلزم احترامهم</li>
-      <li>ممنوع منعا باتا المتاجرة أو إعطاء المعدات العسكرية للمواطنين (يعرضك للفصل)</li>
-      <li>الالتزام بالبروتوكولات في الراديو وعدم الخروج عنها وتمرير البلاغات بشكل خاطئ</li>
-      <li>عدم رفع السلاح إلا للحالات الجنائية أو لسبب واضح</li>
-      <li>عند احتياجك لمركبة عسكرية ممنوع أن تركب مركبة مواطن وتكتفي بطلب وحدة نقل</li>
-      <li>الالتزام باللبس العسكري أو المركبة المخصصة لك ولرتبتك</li>
-      <li>الالتزام ببروتوكول التحية ويعني صرف تحية للضباط والرتب العليا</li>
-    </ul>
+  <ul>
+    <li>يجب احترام تسلسل الرتب</li>
+    <li>ممنوع استخدام صلاحية الشرطة لشيء شخصي أو بشكل مسيء</li>
+    <li>يجب التعامل مع الجميع باحترام حتى أثناء الاعتقال والتحقيق</li>
+    <li>ممنوع منعا باتا عصيان أوامر الرتب العليا ويلزم احترامهم</li>
+    <li>ممنوع منعا باتا المتاجرة أو إعطاء المعدات العسكرية للمواطنين (يعرضك للفصل)</li>
+    <li>الالتزام بالبروتوكولات في الراديو وعدم الخروج عنها وتمرير البلاغات بشكل خاطئ</li>
+    <li>عدم رفع السلاح إلا للحالات الجنائية أو لسبب واضح</li>
+    <li>عند احتياجك لمركبة عسكرية ممنوع أن تركب مركبة مواطن وتكتفي بطلب وحدة نقل</li>
+    <li>الالتزام باللبس العسكري أو المركبة المخصصة لك ولرتبتك</li>
+    <li>الالتزام ببروتوكول التحية ويعني صرف تحية للضباط والرتب العليا</li>
+  </ul>
 
-    <button class="nav-button" onclick="location.href='ranks.html'">التالي</button>
-  </div>
+  <button class="nav-button" onclick="location.href='ranks.html'">التالي</button>
 
 </body>
 </html>
