@@ -21,7 +21,6 @@
       z-index: 0;
     }
 
-    /* دوائر متوهجة في الخلفية */
     body::before, body::after {
       content: "";
       position: fixed;
@@ -33,7 +32,7 @@
     body::before {
       width: 300px;
       height: 300px;
-      background: rgba(255, 235, 59, 0.6); /* أصفر دافئ */
+      background: rgba(255, 235, 59, 0.6);
       top: 30px;
       right: 30px;
       box-shadow: 0 0 60px 30px rgba(255, 235, 59, 0.7);
@@ -99,9 +98,14 @@
       box-shadow: 0 0 8px rgba(255, 235, 59, 0.7);
     }
 
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 1;
+    }
+
     .nav-button {
-      display: block;
-      margin: 30px auto 0;
       padding: 14px 36px;
       font-size: 20px;
       font-weight: bold;
@@ -113,8 +117,6 @@
       box-shadow: 0 6px 14px #e6d400aa;
       transition: background-color 0.3s ease, transform 0.2s ease;
       animation: fadeIn 3s ease-in;
-      position: relative;
-      z-index: 1;
     }
 
     .nav-button:hover {
@@ -136,7 +138,10 @@
     <li>في حال شخص توجه الى مكان من المحتمل حدوث اطلاق نار فيه يتم اسقاطه</li>
   </ul>
 
-  <button class="nav-button" onclick="location.href='tez.html'">التالي</button>
+  <div class="nav-buttons">
+    <button class="nav-button" onclick="history.back()">◀️ السابق</button>
+    <button class="nav-button" onclick="location.href='tez.html'">التالي ▶️</button>
+  </div>
 
 </body>
 </html>
