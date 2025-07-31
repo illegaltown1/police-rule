@@ -12,6 +12,10 @@
       margin: 0;
       padding: 40px 20px;
       animation: fadeIn 1.5s ease-in;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     @keyframes fadeIn {
@@ -24,6 +28,7 @@
       font-size: 36px;
       margin-bottom: 30px;
       color: #ffeb3b;
+      text-shadow: 0 0 8px #ffd700cc;
       animation: fadeIn 2s ease-in;
     }
 
@@ -31,40 +36,56 @@
       list-style-type: none;
       padding: 0;
       background: #424242;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
       max-width: 900px;
-      margin: 0 auto 30px;
+      margin: 0 auto 40px;
       padding: 30px 40px;
     }
 
     ul li {
       font-size: 22px;
-      line-height: 1.8;
-      margin-bottom: 15px;
+      line-height: 2;
+      margin-bottom: 20px;
+      animation: fadeIn 2.5s ease-in;
+      color: #ffd700;
+      text-shadow: 0 0 4px #d4af37aa;
+      position: relative;
+      padding-left: 25px;
     }
 
     ul li::before {
-      content: "• ";
+      content: "•";
       color: #ffd700;
+      font-weight: bold;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 28px;
+      line-height: 1;
     }
 
     .nav-button {
       display: block;
       margin: 30px auto 0;
-      padding: 12px 28px;
+      padding: 14px 36px;
       font-size: 20px;
+      font-weight: bold;
       background-color: #ffeb3b;
       color: #2f2f2f;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 6px 14px #e6d400aa;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      animation: fadeIn 3s ease-in;
     }
 
     .nav-button:hover {
-      background-color: #e6d200;
+      background-color: #e6d400;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px #e6d400dd;
     }
   </style>
 </head>
